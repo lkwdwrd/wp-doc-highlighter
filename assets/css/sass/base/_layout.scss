@@ -1,0 +1,97 @@
+body {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+}
+
+.site-header {
+	flex-shrink: 0;
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	padding: 10px 30px;
+	background: darken( $accent-color, 15% );
+	vertical-align: bottom;
+}
+
+.main-nav {
+	ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+	}
+
+	li ~ li {
+		margin-left: 1.5em;
+	}
+}
+
+main {
+	flex: 0 1 100%;
+	display: flex;
+	overflow: hidden;
+	max-width: 100%;
+
+	.single-wp-parser-function &,
+	.single-wp-parser-method &,
+	.single-wp-parser-hook &,
+	.single-wp-parser-class & {
+		flex-direction: row-reverse;
+	}
+
+	& > * {
+		flex: 0 0 auto;
+		overflow: auto;
+		padding: 30px 30px 10px;
+	}
+}
+
+.main-column {
+	width: 70%;
+
+	section {
+		margin-bottom: 2em;
+	}
+}
+
+.side-rail {
+	width: 30%;
+}
+
+// main {
+// 	position: absolute;
+// 	top: 5.5em;
+// 	right: 10%;
+// 	bottom: 0;
+// 	left: 10%;
+
+// 	.single & {
+// 		display: flex;
+// 		flex-direction: row-reverse;
+// 		align-items: stretch;
+// 	}
+
+// 	.single.single-post & {
+// 		flex-direction: row;
+// 	}
+
+// 	.admin-bar & {
+// 		top: calc( 5.5em + 32px );
+// 	}
+// }
+
+// .main-column {
+// 	width: 70%;
+// 	padding: 0 16px 0 40px;
+// 	overflow: auto;
+// }
+
+// .side-rail {
+// 	position: relative;
+// 	width: 30%;
+// }

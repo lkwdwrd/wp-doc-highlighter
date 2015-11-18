@@ -1,0 +1,19 @@
+.search-form {
+	width: 70%;
+	margin: 0 auto;
+
+	.single-view & {
+		width: 100%;
+		margin: 0;
+	}
+}
+
+.search-label,
+.search-submit {
+	@extend %screen-reader-item;
+}
+
+.search-field {
+	font-size: 1.25em;
+	width: 100%;
+}

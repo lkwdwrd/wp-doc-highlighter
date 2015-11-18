@@ -1,0 +1,28 @@
+{
+	"name": "wp-documentor",
+	"description": "A theme for documenting WordPress code",
+	"version": "0.0.1",
+	"type": "wordpress-theme",
+	"keywords": [],
+	"homepage": "http://wordpress.org/themes",
+	"license": "GPLv2.0+",
+	"authors": [
+		{
+			"name": "Luke Woodward",
+			"email": "woodward.lucas@gmail.com",
+			"homepage": "http://lkwdwrd.com",
+			"role": "Developer"
+		}
+	],
+    "minimum-stability": "dev",
+	"require": {
+		"php": ">=5.4",
+		"xamin/handlebars.php": ">=0.10.2"
+	},
+    "require-dev": {
+	    "antecedent/patchwork": "1.2.*",
+        "phpunit/phpunit"     : "*@stable",
+	    "brianium/paratest"   : "dev-master",
+        "10up/wp_mock"        : "dev-master"
+    }
+}

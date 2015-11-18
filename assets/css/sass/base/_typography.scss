@@ -1,0 +1,68 @@
+body {
+	color: $main-color;
+	line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h5 {
+	color: $accent-color;
+	font-weight: normal;
+	padding: 0 0 0.2em 0;
+	margin: 0 0 0.5em 0;
+	line-height: 1;
+
+	& a {
+		text-decoration: none;
+		color: inherit;
+	}
+
+	article & {
+		border-bottom: 1px solid $aside-color;
+	}
+}
+
+h1 {
+	font-weight: bold;
+}
+
+a {
+	color: $link-color;
+	transition: color 0.2s ease;
+
+	&:hover {
+		color: $link-hover;
+	}
+
+	.main-nav & {
+		text-decoration: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+blockquote {
+	border-left: 1px solid $aside-color;
+	padding-left: 0.5em;
+}
+
+input[type="text"],
+input[type="search"] {
+	color: $main-color;
+	border: 1px solid $accent-color;
+	margin: 0 0 1em;
+	padding: 0.5em 1em;
+}
+
+::placeholder {
+	color: $aside-color;
+}
+
+.site-title {
+	font-size: 1em;
+
+	a {
+		font-size: 2em;
+		text-decoration: none;
+		color: white;
+	}
+}

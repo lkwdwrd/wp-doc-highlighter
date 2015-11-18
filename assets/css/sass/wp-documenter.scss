@@ -1,0 +1,37 @@
+/**
+ * WP Documenter
+ * http://wordpress.org/themes
+ *
+ * Copyright (c) 2015 Luke Woodward
+ * Licensed under the GPLv2+ license.
+ */
+
+// Global items (no output)
+@import "global/variables";
+@import "global/functions";
+@import "global/mixins";
+@import "global/extends";
+
+// Base styling applied everywhere
+@import "base/normalize";
+@import "base/typography";
+@import "base/icons";
+@import "base/layout";
+@import "base/wordpress";
+
+// Component based styling for specific module patterns
+@import "components/buttons";
+@import "components/callouts";
+@import "components/toggles";
+@import "components/search";
+@import "components/types";
+@import "components/deprecated";
+@import "components/namespace";
+@import "components/summary";
+@import "components/signature";
+@import "components/params";
+@import "components/return";
+@import "components/source";
+@import "components/usage";
+
+// Template specific styles

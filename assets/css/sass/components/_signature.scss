@@ -1,0 +1,29 @@
+.signature {
+	font-family: $monospace-stack;
+	background: $block-bg;
+	border: 1px solid $aside-color;
+	padding: 5px 15px;
+	font-size: 1.35em;
+	color: $call-color;
+
+	a {
+		text-decoration: none;
+	}
+	a:hover,
+	a:focus {
+		text-decoration: underline;
+	}
+}
+
+.arg-type {
+	font-size: 0.75em;
+	color: $keyword-color;
+}
+
+.arg-name {
+	color: $variable-color;
+}
+
+.arg-default {
+	color: $comment-color;
+}

@@ -1,0 +1,36 @@
+.usage {
+	line-height: 1.3;
+
+	h3 {
+		border-bottom: 0;
+		color: $main-color;
+	}
+	.use-columns {
+		display: flex;
+
+		& > div {
+			flex: 0 1 70%;
+			padding-right: 10px; 
+		}
+	}
+
+	ul, li {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+	}
+
+	li {
+		margin-bottom: 0.5em;
+	}
+
+	.usage-namespace,
+	.usage-source-file {
+		font-size: 0.8em;
+		color: $accent-color;
+	}
+
+	.usage-source-file {
+		color: $aside-color;
+	}
+}

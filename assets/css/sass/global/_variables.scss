@@ -1,0 +1,31 @@
+// General Colors
+$main-color: #111111;
+$main-dark: #000000;
+$accent-color: #666666;
+$aside-color: #999999;
+$link-color: #5579aa;
+$link-hover: #1175aa;
+
+// Identity Colors
+$function-color: #f0371f;
+$class-color: #0b8e01;
+$method-color: #e68f02;
+$hook-color: #0162a3;
+$filter-color: #5601aa;
+
+// Code Colors
+$call-color: darken( $function-color, 15% );
+$keyword-color: darken( $class-color, 2% );
+$string-color: $method-color;
+$variable-color: lighten( $hook-color, 2% );
+$comment-color: $aside-color;
+$operator-color: $accent-color;
+$block-bg: #f5f5f5;
+
+// Deprecated
+$deprecated-bg: darken( $method-color, 3% );
+$deprecated-border: darken( $deprecated-bg, 10% );
+$deprecated-color: #FFFFFF;
+
+// Font stacks
+$monospace-stack: Menlo, Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;

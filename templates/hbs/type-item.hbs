@@ -1,0 +1,16 @@
+<li id={{id}}>
+	<a class="type-listing-link" href="{{url}}">
+		<h3 class="type-listing-header">{{name}}</h3>
+		{{#if identityTagType}}
+			{{#if identityTag }}
+				<span class="identity-tag identity-tag-{{identityTagType}}">{{identityTag}}</span>
+			{{/if}}
+		{{/if}}
+		{{#if namespace}}
+			<div class="type-listing-namespace">{{namespace}}</div>
+		{{/if}}
+		{{#if description}}
+			<div class="type-listing-s-desc">{{description}}</div>
+		{{/if}}
+	</a>
+</li>
