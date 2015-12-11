@@ -6,6 +6,23 @@ body {
 	left: 0;
 	display: flex;
 	flex-direction: column;
+
+	&.admin-bar {
+		padding-top: 46px;
+	}
+
+	@media screen and ( min-width: 600px ) {
+		&.admin-bar {
+			padding-top: 0;
+			top: 46px;
+		}
+	}
+
+	@media screen and ( min-width: 782px ) {
+		&.admin-bar {
+			top: 32px;
+		}
+	}
 }
 
 .site-header {
@@ -48,11 +65,13 @@ main {
 		flex: 0 0 auto;
 		overflow: auto;
 		padding: 30px 30px 10px;
+		position: relative;
 	}
 }
 
 .main-column {
 	width: 70%;
+	min-height: 100%;
 
 	section {
 		margin-bottom: 2em;
@@ -63,35 +82,14 @@ main {
 	width: 30%;
 }
 
-// main {
-// 	position: absolute;
-// 	top: 5.5em;
-// 	right: 10%;
-// 	bottom: 0;
-// 	left: 10%;
+.archive main > .type-section,
+.search main > .type-section {
+	width: 60%;
+	padding: 0;
+	margin: 0 auto;
+}
 
-// 	.single & {
-// 		display: flex;
-// 		flex-direction: row-reverse;
-// 		align-items: stretch;
-// 	}
-
-// 	.single.single-post & {
-// 		flex-direction: row;
-// 	}
-
-// 	.admin-bar & {
-// 		top: calc( 5.5em + 32px );
-// 	}
-// }
-
-// .main-column {
-// 	width: 70%;
-// 	padding: 0 16px 0 40px;
-// 	overflow: auto;
-// }
-
-// .side-rail {
-// 	position: relative;
-// 	width: 30%;
-// }
+.home main > .type-section {
+	width: 25%;
+	padding: 0;
+}

@@ -11,17 +11,14 @@ namespace WP_Doc\Highlighter;
 use WP_Doc\Highlighter\Tempalate;
 
 get_header(); ?>
+	<div class="breadcrumb-trail breadcrumbs" itemprop="breadcrumb">
+		<span class="trail-browse"><span class="trail-begin"><?php _e( 'Search Results', 'wporg' ); ?></span></span>
+		<span class="sep">/</span> <span class="trail-end"><?php echo esc_html( get_search_query() ); ?></span>
+	</div>
 
-	<div id="content-area">
-
-		<div class="breadcrumb-trail breadcrumbs" itemprop="breadcrumb">
-			<span class="trail-browse"><span class="trail-begin"><?php _e( 'Search Results', 'wporg' ); ?></span></span>
-			<span class="sep">/</span> <span class="trail-end"><?php echo esc_html( get_search_query() ); ?></span>
-		</div>
-
-		<?php Template\reference_search_form(); ?>
-		<div class="type-container">
-			<?php 
+	<?php Template\reference_search_form(); ?>
+	<main>
+		<?php 
 			Template\reference_list_template(
 				'type-list',
 				array(
@@ -33,6 +30,5 @@ get_header(); ?>
 				)
 			);
 			?>
-		</div>
-	</div><!-- #primary -->
+	</main>
 <?php get_footer(); ?>

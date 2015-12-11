@@ -8,10 +8,15 @@
 
 namespace WP_Doc\Highlighter;
 
-?>
-<?php if ( is_active_sidebar( 'sidebar-reference' ) ) : ?>
-	<?php do_action( 'before_sidebar' ); ?>
-	<div class="sidebar reference-sidebar">
-		<?php dynamic_sidebar( 'sidebar-reference' ); ?>
-	</div>
-<?php endif; ?>
+do_action( 'before_sidebar' ); 
+Template\reference_search_form();
+Template\reference_list_template(
+	'type-list', 
+	array(),
+	array(
+		'posts_per_page' => 100,
+		'post_type' => 'reference',
+		'orderby' => 'title',
+		'order' => 'ASC',
+	)
+);

@@ -6,7 +6,7 @@ use WP_Doc\Highlighter\Template;
 
 get_header(); ?>
 <?php Template\reference_search_form(); ?>
-<div class="type-container">
+<main>
 	<?php 
 	Template\reference_list_template(
 		'type-list', 
@@ -77,5 +77,5 @@ get_header(); ?>
 		)
 	);
 	?>
-</div>
+</main>
 <?php get_footer(); ?>

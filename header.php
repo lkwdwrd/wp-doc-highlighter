@@ -24,4 +24,3 @@ use WP_Doc\Highlighter\Template;
 			<?php Template\home_link(); ?>
 			<?php Template\main_menu(); ?>
 		</header>
-		<main>
