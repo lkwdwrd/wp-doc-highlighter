@@ -638,23 +638,41 @@ main {
   font-size: 0.7em;
   padding: 0.15em 0.5em; }
 
-.identity-tag-function {
+.identity-chip::before {
+  content: '';
+  display: inline-block;
+  width: 0.4em;
+  height: 0.4em;
+  margin-right: 0.4em;
+  vertical-align: middle; }
+
+.identity-tag-function,
+.identity-chip-function::before {
   background-color: #f0371f; }
 
-.identity-tag-hook {
+.identity-tag-hook,
+.identity-chip-hook::before {
   background-color: #0162a3; }
 
-.identity-tag-class {
+.identity-tag-class,
+.identity-chip-class::before {
   background-color: #0b8e01; }
 
-.identity-tag-method {
+.identity-tag-method,
+.identity-chip-method::before {
   background-color: #e68f02; }
 
-.deprecated {
+.deprecated, .class-methods .method-deprecated {
   background: #d78602;
   border: 1px solid #a46601;
   padding: 5px 15px;
   color: #FFFFFF; }
+
+.class-methods .method-deprecated {
+  font-size: 0.75em;
+  line-height: 1;
+  padding: 1px 5px;
+  margin-left: 1em; }
 
 .main-column .namespace, .main-column .source-file {
   margin-top: -0.7em;
@@ -669,8 +687,10 @@ main {
   background: #f5f5f5;
   border: 1px solid #999999;
   padding: 5px 15px;
-  font-size: 1.35em;
-  color: #b6200c; }
+  font-size: 1em;
+  color: #b6200c;
+  text-indent: -1em;
+  padding-left: calc( 15px + 1em); }
   .signature a {
     text-decoration: none; }
   .signature a:hover,
@@ -685,6 +705,9 @@ main {
   color: #0168ad; }
 
 .arg-default {
+  color: #999999; }
+
+.arg-hook-func {
   color: #999999; }
 
 .parameters dl, .parameters dt, .parameters dd, .parameters ul, .parameters li, .parameters p {
@@ -732,29 +755,30 @@ main {
   margin-top: -0.4em;
   margin-bottom: 2em; }
 
-.usage {
+.usage, .class-methods {
   line-height: 1.3; }
-  .usage h3 {
+  .usage h3, .class-methods h3 {
     border-bottom: 0;
     color: #111111; }
-  .usage .use-columns {
+  .usage .use-columns, .class-methods .use-columns {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex; }
-    .usage .use-columns > div {
+    .usage .use-columns > div, .class-methods .use-columns > div {
       -webkit-flex: 0 1 70%;
           -ms-flex: 0 1 70%;
               flex: 0 1 70%;
       padding-right: 10px; }
-  .usage ul, .usage li {
+  .usage ul, .class-methods ul, .usage li, .class-methods li {
     margin: 0;
     padding: 0;
     list-style-type: none; }
-  .usage li {
+  .usage li, .class-methods li {
     margin-bottom: 0.5em; }
   .usage .usage-namespace,
-  .usage .usage-source-file {
+  .class-methods .usage-namespace,
+  .class-methods .method-summary, .usage .usage-source-file, .class-methods .usage-source-file {
     font-size: 0.8em;
     color: #666666; }
-  .usage .usage-source-file {
+  .usage .usage-source-file, .class-methods .usage-source-file {
     color: #999999; }

@@ -113,15 +113,30 @@
 	padding: 0.15em 0.5em;
 }
 
-.identity-tag-function{
+.identity-chip::before {
+	content: '';
+	display: inline-block;
+	width: 0.4em;
+	height: 0.4em;
+	margin-right: 0.4em;
+	vertical-align: middle;
+}
+
+.identity-tag-function,
+.identity-chip-function::before {
 	background-color: $function-color;
 }
-.identity-tag-hook{
+
+.identity-tag-hook,
+.identity-chip-hook::before {
 	background-color: $hook-color;
 }
-.identity-tag-class{
+
+.identity-tag-class,
+.identity-chip-class::before {
 	background-color: $class-color;
 }
-.identity-tag-method{
+.identity-tag-method,
+.identity-chip-method::before {
 	background-color: $method-color;
 }

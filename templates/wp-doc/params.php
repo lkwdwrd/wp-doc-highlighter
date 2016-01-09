@@ -11,7 +11,7 @@
 			<dd>
 				<p class="desc">
 					<?php if ( ! empty( $param['types'] ) ) : ?>
-						<span class="type">(<?php echo esc_html( implode( '|', $param['types'] ) ); ?>)</span>
+						<span class="type">(<?php echo esc_html( implode( ' | ', $param['types'] ) ); ?>)</span>
 					<?php endif; ?>
 					<?php if ( ! empty( $param['required'] ) && 'wp-parser-hook' !== get_post_type() ) : ?>
 						<span class="required">(<?php echo esc_html( $param['required'] ); ?>)</span>
@@ -19,14 +19,14 @@
 					<?php if ( ! empty( $param['content'] ) ) : ?>
 						<span class="description">
 							<?php if ( is_string( $param['content'] ) ) : ?>
-								<?php echo esc_html( $param['content'] ); ?>
+								<?php echo wp_kses_post( $param['content'] ); ?>
 							<?php else : ?>
 								<ul class="param-hash">
 								<?php foreach( $param['content'] as $type_item ) : ?>
 									<li>
 										<span class="arg"><?php echo esc_html( $type_item['name'] ); ?></span>
 										<span class='type'>(<?php echo esc_html( $type_item['type'] ); ?>)</span>
-										<?php echo esc_html( $type_item['description'] ); ?>
+										<?php echo wp_kses_post( $type_item['description'] ); ?>
 									</li>
 								<?php endforeach; ?>
 								</ul>

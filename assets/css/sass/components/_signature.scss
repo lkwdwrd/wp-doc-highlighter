@@ -3,8 +3,10 @@
 	background: $block-bg;
 	border: 1px solid $aside-color;
 	padding: 5px 15px;
-	font-size: 1.35em;
+	font-size: 1em;
 	color: $call-color;
+	text-indent: -1em;
+	padding-left: calc( 15px + 1em );
 
 	a {
 		text-decoration: none;
@@ -25,5 +27,9 @@
 }
 
 .arg-default {
+	color: $comment-color;
+}
+
+.arg-hook-func {
 	color: $comment-color;
 }

@@ -109,14 +109,6 @@ function register_theme_sidebar() {
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1><div class="widget-content">',
 	) );
-	register_sidebar( array(
-		'name'          => __( 'Reference Sidebar', 'wpd' ),
-		'id'            => 'sidebar-reference',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div></aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1><div class="widget-content">',
-	) );
 }
 
 /**

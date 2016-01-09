@@ -3,14 +3,19 @@
 		<h2><?php esc_html_e( 'Methods', 'wpd' ); ?></h2>
 		<ul>
 			<?php foreach ( $data->methods as $method ) : ?>
-				<li><a href="<?php echo esc_url( $method->url ); ?>">
-				</a>
-				<?php if ( $excerpt = apply_filters( 'get_the_excerpt', $child->post_excerpt ) ) {
-					echo '&mdash; ' . sanitize_text_field( $excerpt );
-				} ?>
-				<?php if ( is_deprecated( $child->ID ) ) {
-					echo '&mdash; <span class="deprecated-method">' . __( 'deprecated', 'wporg' ) . '</span>';
-				} ?>
+				<li>
+					<a href="<?php echo esc_url( get_the_permalink( $method->post ) ); ?>">
+						<?php
+							echo get_the_title( $method->post );
+							echo ( $method->callable ) ? '()' : '';
+						?>
+					</a>
+					<?php if ( (bool) $method->deprecated ): ?>
+						<span class="method-deprecated"><?php _e( 'deprecated', 'wpd' ); ?></span>
+					<?php endif; ?>
+					<?php if ( (bool) $method->summary ) : ?>
+						<div class="method-summary"><?php echo esc_html( $method->summary ); ?></div>
+					<?php endif; ?>
 				</li>
 			<?php endforeach; ?>
 		</ul>

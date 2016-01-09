@@ -8,7 +8,7 @@
 					<a href="<?php echo esc_url( $data['since_url'] ); ?>">
 						<?php echo esc_html( $version ); ?>
 					</a>
-					<?php echo esc_html( $data['description'] ); ?>
+					<?php echo wp_kses_post( $data['description'] ); ?>
 				</li>
 			<?php endforeach; ?>
 		</ul>

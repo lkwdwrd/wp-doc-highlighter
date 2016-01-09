@@ -6,18 +6,7 @@
 				<h3><?php esc_html_e( 'Used by', 'wpd' ); ?></h3>
 				<ul>
 					<?php foreach ( $data->used_by as $used_by ) : ?>
-						<li>
-							<a href="<?php echo esc_url( get_the_permalink( $used_by->post ) ); ?>">
-								<?php
-									echo get_the_title( $used_by->post );
-									echo ( $used_by->callable ) ? '()' : '';
-								?>
-							</a>
-							<?php if ( (bool) $used_by->namespace ) : ?>
-								<div class="usage-namespace"><?php echo esc_html( $used_by->namespace['text'] ); ?></div>
-							<?php endif; ?>
-							<div class="usage-source-file"><?php echo esc_html( $used_by->source_file ); ?></div>
-						</li>
+						<?php echo $used_by->render( 'usage-item' ); ?>
 					<?php endforeach; ?>
 				</ul>
 			</div>
@@ -26,18 +15,7 @@
 					<h3><?php esc_html_e( 'Uses', 'wpd' ); ?></h3>
 					<ul>
 						<?php foreach ( $data->uses as $uses ) : ?>
-							<li>
-								<a href="<?php echo esc_url( get_the_permalink( $uses->post ) ); ?>">
-									<?php
-										echo get_the_title( $used_by->post );
-										echo ( $uses->callable ) ? '()' : '';
-									?>
-								</a>
-								<?php if ( (bool) $uses->namespace ) : ?>
-									<div class="usage-namespace"><?php echo esc_html( $uses->namespace['text'] ); ?></div>
-								<?php endif; ?>
-								<div class="usage-source-file"><?php echo esc_html( $uses->source_file ); ?></div>
-							</li>
+							<?php echo $uses->render( 'usage-item' ); ?>
 						<?php endforeach; ?>
 					</ul>
 				</div>

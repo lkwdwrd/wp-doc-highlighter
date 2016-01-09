@@ -17,20 +17,13 @@ the_post();
 	<article id="post-<?php get_the_id(); ?>" <?php post_class( array( 'main-column', 'language-php' ) ); ?>>
 		<?php Template\reference_template( 'deprecated' ); ?>
 		<?php Template\reference_template( 'title' ); ?>
-		<?php Template\reference_template( 'namespace' ); ?>
 		<?php Template\reference_template( 'summary' ); ?>
+		<?php Template\reference_template( 'signature-hook' ); ?>
+		<?php Template\reference_template( 'params' ); ?>
 		<?php Template\reference_template( 'description' ); ?>
-		<?php Template\reference_template( 'methods' ); ?>
-		<?php Template\reference_template( 'source' ); ?>
+		<?php Template\reference_template( 'source-file' ); ?>
+		<?php Template\reference_template( 'usage' ); ?>
 		<?php Template\reference_template( 'changelog' ); ?>
-
-		<?php /* $explanation = Reference\get_explanation_field( 'post_content', get_the_ID() );
-		if ( $explanation ) : ?>
-			<section class="explanation">
-				<h2><?php esc_html_e( 'Explanation', 'wpd' ); ?></h2>
-				<?php echo apply_filters( 'the_content', apply_filters( 'get_the_content', $explanation ) ); ?>
-			</section>
-		<?php endif; */?>
 
 		<?php if ( comments_open() || '0' != get_comments_number() ) : ?>
 			<section class="user-notes">

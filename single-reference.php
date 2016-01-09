@@ -16,7 +16,7 @@ the_post();
 <main>
 	<article id="post-<?php get_the_id(); ?>" <?php post_class( array( 'main-column', 'language-php' ) ); ?>>
 		<?php Template\reference_template( 'deprecated' ); ?>
-		<h1><?php the_title(); ?></h1>
+		<?php Template\reference_template( 'title' ); ?>
 		<?php Template\reference_template( 'namespace' ); ?>
 		<?php Template\reference_template( 'summary' ); ?>
 		<?php Template\reference_template( 'signature' ); ?>

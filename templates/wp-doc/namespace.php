@@ -1,4 +1,4 @@
-<?php if ( (bool) $data->namespace ) : ?>
+<?php if ( (bool) $data->namespace && ! empty( $data->namespace['terms'] ) ) : ?>
 	<section class="namespace">
 		<strong>Namespace:</strong>
 		<?php echo implode(

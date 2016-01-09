@@ -1,0 +1,16 @@
+.class-methods {
+	@extend .usage;
+
+	.method-summary {
+		@extend .usage-namespace;
+	}
+
+	.method-deprecated {
+		@extend .deprecated;
+		font-size: 0.75em;
+		line-height: 1;
+		padding: 1px 5px;
+		margin-left: 1em;
+	}
+}
+
