@@ -1,6 +1,14 @@
 .class-methods {
 	@extend .usage;
 
+	ul {
+		columns: 2 300px;
+
+		li {
+			break-inside: avoid;
+		}
+	}
+
 	.method-summary {
 		@extend .usage-namespace;
 	}
