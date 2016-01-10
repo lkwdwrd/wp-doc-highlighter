@@ -4,7 +4,7 @@
 		<div class="use-columns">
 			<div class="used-by">
 				<h3><?php esc_html_e( 'Used by', 'wpd' ); ?></h3>
-				<ul>
+				<ul class="js-collapsable">
 					<?php foreach ( $data->used_by as $used_by ) : ?>
 						<?php echo $used_by->render( 'usage-item' ); ?>
 					<?php endforeach; ?>
@@ -13,7 +13,7 @@
 			<?php if ( (bool)$data->uses ) : ?>
 				<div class="uses">
 					<h3><?php esc_html_e( 'Uses', 'wpd' ); ?></h3>
-					<ul>
+					<ul class="js-collapsable">
 						<?php foreach ( $data->uses as $uses ) : ?>
 							<?php echo $uses->render( 'usage-item' ); ?>
 						<?php endforeach; ?>

@@ -524,6 +524,39 @@ main {
   width: 25%;
   padding: 0; }
 
+.collapsable {
+  transition: height 0.45s ease;
+  overflow: hidden; }
+
+.collapsed {
+  position: relative; }
+  .collapsed::before {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    height: 45px;
+    width: 100%;
+    z-index: 10;
+    background: linear-gradient(to top, white 10%, rgba(255, 255, 255, 0) 100%); }
+
+.collapser {
+  display: inline-block;
+  font-size: 0.8em;
+  text-decoration: none;
+  border: 1px solid;
+  padding: 1px 3px;
+  margin-top: 0.5em; }
+  .collapser::after {
+    display: inline-block;
+    font-size: 0.5em;
+    vertical-align: middle;
+    padding-left: 0.5em;
+    content: '\25B2'; }
+
+.collapsed + .collapser-container .collapser::after {
+  content: '\25BC'; }
+
 .search-form {
   width: 60%;
   margin: 0 auto; }
@@ -764,6 +797,9 @@ main {
   margin-top: -0.4em;
   margin-bottom: 2em; }
 
+.source-code-container {
+  transition: height 0.35s ease; }
+
 .usage, .class-methods {
   line-height: 1.3; }
   .usage h3, .class-methods h3 {
@@ -774,9 +810,9 @@ main {
     display: -ms-flexbox;
     display: flex; }
     .usage .use-columns > div, .class-methods .use-columns > div {
-      -webkit-flex: 0 1 70%;
-          -ms-flex: 0 1 70%;
-              flex: 0 1 70%;
+      -webkit-flex: 0 1 50%;
+          -ms-flex: 0 1 50%;
+              flex: 0 1 50%;
       padding-right: 10px; }
   .usage ul, .class-methods ul, .usage li, .class-methods li {
     margin: 0;

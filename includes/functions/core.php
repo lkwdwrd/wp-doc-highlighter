@@ -15,7 +15,7 @@ function setup() {
 	add_action( 'after_setup_theme',  $n( 'theme_support' ) );
 	add_action( 'widgets_init',       $n( 'register_theme_sidebar' ) );
 	add_action( 'init',               $n( 'register_theme_menus' ) );
-	add_action( 'wp_enqueue_scripts', $n( 'scripts' ) );
+	add_action( 'wp_enqueue_scripts', $n( 'scripts' ), 1000 );
 	add_action( 'wp_enqueue_scripts', $n( 'styles' ) );
 	add_action( 'wp_head',            $n( 'header_meta' ) );
 
@@ -54,21 +54,38 @@ function theme_support() {
 function scripts( $debug = false ) {
 	$min = ( $debug || defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
-	wp_enqueue_script(
-		'wpd',
-		WPDOC_HLTR_TEMPLATE_URL . "/assets/js/wp-documenter{$min}.js",
+	wp_register_script(
+		'wpdh-common',
+		WPDOC_HLTR_TEMPLATE_URL . "/assets/js/common{$min}.js",
 		array(),
 		WPDOC_HLTR_VERSION,
 		true
 	);
 
-	wp_enqueue_script( 
+	wp_register_script(
+		'wpdh-highlighter',
+		WPDOC_HLTR_TEMPLATE_URL . "/assets/js/highlighter{$min}.js",
+		array(),
+		WPDOC_HLTR_VERSION,
+		true
+	);
+
+	wp_register_script( 
 		'prism',
 		WPDOC_HLTR_TEMPLATE_URL . "/assets/js/vendor/prism{$min}.js",
 		array(),
 		WPDOC_HLTR_VERSION,
 		true
 	);
+
+	wp_enqueue_script( 'wpdh-common' );
+	wp_enqueue_script( 'wpdh-highlighter' );
+	wp_enqueue_script( 'prism' );
+
+	wp_localize_script( 'wpdh-highlighter', 'jsdhI18n', array(
+		'expandText' => 'See More',
+		'collapseText' => 'See Less',
+	) );
 }
 
 /**
