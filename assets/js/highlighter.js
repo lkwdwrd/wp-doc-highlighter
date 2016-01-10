@@ -132,4 +132,12 @@ function remeasureHeight() {
 }
 Collapsable.prototype.remeasureHeight = remeasureHeight;
 
-},{"./i18n":4}]
+},{"./i18n":4}],4:[function(require,module,exports){
+(function (global){
+module.exports = global.jsdhI18n || {
+	expandText: 'Expand',
+	collapseText: 'Collapse'
+};
+
+}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{}]},{},[3]);

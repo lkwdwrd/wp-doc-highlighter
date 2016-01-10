@@ -541,6 +541,7 @@ main {
     background: linear-gradient(to top, white 10%, rgba(255, 255, 255, 0) 100%); }
 
 .collapser {
+  color: #999999;
   display: inline-block;
   font-size: 0.8em;
   text-decoration: none;
