@@ -21,4 +21,5 @@ get_header(); ?>
 		);
 		?>
 	</main>
+	<?php get_template_part( 'templates/partials/archive', 'navigation' ); ?>
 <?php get_footer(); ?>

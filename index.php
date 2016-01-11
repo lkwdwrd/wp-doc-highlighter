@@ -15,25 +15,25 @@
 namespace WP_Doc\Highlighter;
 
 get_header(); ?>
-
-<div id="content-area">
-	
-
-	<main id="main" class="site-main" role="main">
-
+<main id="main" class="site-main" role="main">
+	<div id="site-content" class="main-column">
 		<?php if ( have_posts() ) : ?>
-
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
-
-				<h2><?php the_title(); ?></h2>
-				<?php the_content(); ?>
-
+				<article id="post-<?php the_id(); ?>" <?php post_class(); ?>>
+					<?php get_template_part( 'templates/partials/content', 'media' ); ?>
+					<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+					<?php get_template_part( 'templates/partials/content', 'meta' ); ?>
+					<?php the_content(); ?>
+					<?php wp_link_pages(); ?>
+				</article>
 			<?php endwhile; ?>
 
 		<?php endif; ?>
-
-	</main><!-- #main -->
-	<?php get_sidebar(); ?>
-</div><!-- #primary -->
+		<?php get_template_part( 'templates/partials/archive', 'navigation' ); ?>
+	</div>
+	<div class="side-rail">
+		<?php get_sidebar(); ?>
+	</div>
+</main><!-- #main -->
 <?php get_footer(); ?>

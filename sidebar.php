@@ -11,7 +11,5 @@ namespace WP_Doc\Highlighter;
 ?>
 <?php if ( is_active_sidebar( 'sidebar-main' ) ) : ?>
 	<?php do_action( 'before_sidebar' ); ?>
-	<ul class="sidebar main-sidebar">
-		<?php dynamic_sidebar( 'sidebar-main' ); ?>
-	</ul>
+	<?php dynamic_sidebar( 'sidebar-main' ); ?>
 <?php endif; ?>

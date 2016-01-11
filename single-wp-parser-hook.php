@@ -14,7 +14,7 @@ get_header();
 the_post();
 ?>
 <main>
-	<article id="post-<?php get_the_id(); ?>" <?php post_class( array( 'main-column', 'language-php' ) ); ?>>
+	<article id="post-<?php the_id(); ?>" <?php post_class( array( 'main-column', 'language-php' ) ); ?>>
 		<?php Template\reference_template( 'deprecated' ); ?>
 		<?php Template\reference_template( 'title' ); ?>
 		<?php Template\reference_template( 'summary' ); ?>
