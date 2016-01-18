@@ -21,6 +21,9 @@ function setup() {
 
 	// Skip duplicate parser hooks.
 	add_filter( 'wp_parser_skip_duplicate_hooks', '__return_true' );
+
+	// Use custom more text.
+	add_filter( 'the_content_more_link', $n( 'more_link' ), 10, 2 );
 }
 
 /**
@@ -44,6 +47,7 @@ function i18n() {
 function theme_support() {
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'html5', array( 'gallery', 'caption' ) );
 }
 
 /**
@@ -149,4 +153,15 @@ function header_meta() {
 	$humans = '<link type="text/plain" rel="author" href="' . WPDOC_HLTR_URL . '/humans.txt" />';
 
 	echo apply_filters( 'wpd_humans', $humans );
+}
+
+/**
+ * Replaces the standard more text with 'Continue Reading'.
+ *
+ * @param  string $link The full link string, a tag and all.
+ * @param  string $text The more text being used.
+ * @return string       The updated more text with the custom element.
+ */
+function more_link( $link, $text ) {
+	return ( __( '(more&hellip;)' ) !== $text ) ? $link : str_replace( $text, __( 'Continue Reading', 'wpdh' ), $link );
 }

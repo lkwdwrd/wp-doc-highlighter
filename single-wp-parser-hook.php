@@ -24,13 +24,6 @@ the_post();
 		<?php Template\reference_template( 'source-file' ); ?>
 		<?php Template\reference_template( 'usage' ); ?>
 		<?php Template\reference_template( 'changelog' ); ?>
-
-		<?php if ( comments_open() || '0' != get_comments_number() ) : ?>
-			<section class="user-notes">
-				<h2><?php esc_html_e( 'User Contributed Notes', 'wporg' ); ?></h2>
-				<?php comments_template(); ?>
-			</section>
-		<?php endif; ?>
 	</article>
 	<div class="side-rail">
 		<?php get_sidebar( 'reference' ); ?>

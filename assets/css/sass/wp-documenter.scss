@@ -14,13 +14,12 @@
 
 // Base styling applied everywhere
 @import "base/normalize";
-@import "base/typography";
-@import "base/icons";
 @import "base/layout";
-@import "base/wordpress";
+@import "base/forms";
+@import "base/typography";
 
 // Component based styling for specific module patterns
-@import "components/buttons";
+@import "components/article-header";
 @import "components/callouts";
 @import "components/collapsable";
 @import "components/toggles";

@@ -1,0 +1,97 @@
+
+fieldset {
+	padding: 1em 1em;
+	margin: 1em 0;
+}
+
+legend {
+	padding: 0;
+	font-weight: bold;
+	font-size: 1.2em;
+}
+
+label {
+	display: block;
+	margin: 1em 0;
+
+	textarea,
+	select,
+	input[type="text"],
+	input[type="email"],
+	input[type="search"],
+	input[type="tel"],
+	input[type="url"],
+	input[type="password"],
+	input[type="color"],
+	input[type="file"],
+	input[type="color"],
+	input[type="number"],
+	input[type="range"],
+	input[type="date"],
+	input[type="month"],
+	input[type="week"],
+	input[type="time"],
+	input[type="datetime"],
+	input[type="datetime-local"] {
+		display: block;
+		width: 100%; // good?
+	}
+}
+
+textarea,
+select,
+input[type="text"],
+input[type="email"],
+input[type="search"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+input[type="color"],
+input[type="file"],
+input[type="color"],
+input[type="number"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"] {
+	margin: .2em 0;
+	padding: .25em .4em;
+	border: 1px solid $aside-color;
+	max-width: 100%;
+}
+
+input[type="file"] { 
+	border-width: 0;
+	padding: 0;
+}
+
+
+input[type="image"] {
+	vertical-align: bottom;
+}
+
+.button,
+button,
+input[type="submit"] {
+	background: none;
+	color: $aside-color;
+	display: inline-block;
+	font-size: 0.8em;
+	text-decoration: none;
+	border: 1px solid;
+	padding: 1px 3px;
+
+	&:hover {
+		color: $link-hover;
+	}
+
+	&::after {
+		display: inline-block;
+		font-size: 0.5em;
+		vertical-align: middle;
+		padding-left: 0.5em;
+	}
+}

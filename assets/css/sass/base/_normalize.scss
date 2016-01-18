@@ -190,7 +190,11 @@ sub {
  */
 
 img {
+  display: block;
   border: 0;
+  max-width: 100%;
+  width: auto;
+  height: auto;
 }
 
 /**
@@ -418,11 +422,25 @@ optgroup {
  */
 
 table {
+  width: 100%;
   border-collapse: collapse;
+  text-align: left;
+  overflow: hidden;
   border-spacing: 0;
+  margin-bottom: 1em;
+  border: 1px solid $aside-color;
 }
 
 td,
-th {
-  padding: 0;
+th {    
+    padding: 0.2em 0.5em;
+}
+  
+th{
+  border-bottom: 1px solid $aside-color;
+  background-color: darken( $block-bg, 15% );
+}
+  
+tr:nth-of-type( even ) td{
+  background-color: darken( $block-bg, 5% );
 }

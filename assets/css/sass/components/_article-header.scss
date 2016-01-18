@@ -1,0 +1,49 @@
+.featured-media {
+	margin-bottom: 1em;
+	img {
+		padding: 0.8em;
+		border: 1px solid $aside-color;
+	}
+}
+
+.permalink {
+	color: $accent-color;
+	text-decoration: none;
+
+	&:hover {
+		color: $aside-color;
+	}
+
+	.single &:hover {
+		color: $accent-color;
+	}
+}
+
+.post-title {
+	font-size: 2em;
+	font-weight: bold;
+	color: inherit;
+
+	.sticky & {
+		@extend .identity-chip;
+		&::before {
+			transition: background-color 0.3s ease;
+			background: $accent-color;
+		}
+		&:hover::before {
+			background: $aside-color;
+		}
+	}
+}
+
+.post-meta {
+	font-size: 0.8em;
+	margin-top: -1em;
+}
+
+.date-sep {
+	font-size: 1.25em;
+	vertical-align: middle;
+	padding-left: 0.3em;
+	padding-right: 0.3em;
+}

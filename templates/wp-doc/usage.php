@@ -1,4 +1,3 @@
-<?php var_dump( $data->used_by ); ?>
 <?php if ( (bool)$data->used_by ) : ?>
 	<section class="usage">
 		<h2><?php esc_html_e( 'Usage', 'wpd' ); ?></h2>

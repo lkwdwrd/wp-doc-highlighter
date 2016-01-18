@@ -93,3 +93,27 @@ main {
 	width: 25%;
 	padding: 0;
 }
+
+.home .type-post,
+.archive .type-post {
+	margin-bottom: 3em;
+}
+
+.alignleft {
+	float: left;
+	margin-right: 1em;
+	margin-bottom: 0.5em;
+}
+
+.aligncenter,
+.twitter-tweet {
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 0.5em;
+}
+
+.alignright {
+	float: right;
+	margin-left: 1em;
+	margin-bottom: 0.5em;
+}

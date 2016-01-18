@@ -22,10 +22,16 @@ get_header(); ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 				<article id="post-<?php the_id(); ?>" <?php post_class(); ?>>
 					<?php get_template_part( 'templates/partials/content', 'media' ); ?>
-					<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+					<a class="permalink" href="<?php the_permalink(); ?>">
+						<h2 class="post-title"><?php the_title(); ?></h2>
+					</a>
 					<?php get_template_part( 'templates/partials/content', 'meta' ); ?>
 					<?php the_content(); ?>
-					<?php wp_link_pages(); ?>
+					<?php wp_link_pages( $defaults = array(
+						'before'           => '<p class="page-links">' . __( 'Pages:' ),
+						'link_before'      => '<span class="button page-link">',
+						'link_after'       => '</span>',
+					) ); ?>
 				</article>
 			<?php endwhile; ?>
 

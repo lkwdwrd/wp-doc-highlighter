@@ -26,21 +26,6 @@ the_post();
 		<?php Template\reference_template( 'usage' ); ?>
 		<?php Template\reference_template( 'source' ); ?>
 		<?php Template\reference_template( 'changelog' ); ?>
-
-		<?php /* $explanation = Reference\get_explanation_field( 'post_content', get_the_ID() );
-		if ( $explanation ) : ?>
-			<section class="explanation">
-				<h2><?php esc_html_e( 'Explanation', 'wpd' ); ?></h2>
-				<?php echo apply_filters( 'the_content', apply_filters( 'get_the_content', $explanation ) ); ?>
-			</section>
-		<?php endif; */?>
-
-		<?php if ( comments_open() || '0' != get_comments_number() ) : ?>
-			<section class="user-notes">
-				<h2><?php esc_html_e( 'User Contributed Notes', 'wporg' ); ?></h2>
-				<?php comments_template(); ?>
-			</section>
-		<?php endif; ?>
 	</article>
 	<div class="side-rail">
 		<?php get_sidebar( 'reference' ); ?>
